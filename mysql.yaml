@@ -2,7 +2,7 @@
   hosts: mysql
   become: yes
   tasks:
-  - name: disable current version of my sql
+  - name: disable current version of mysql
     ansible.builtin.commend: dnf module disable mysql -y
 
   - name: setup mysql5.7 repo
