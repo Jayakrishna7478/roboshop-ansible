@@ -1,0 +1,20 @@
+- name: catalogue
+  hosts: catalogue
+  become: yes
+  tasks:
+  - name: disable old nodejs and enable nodejs
+    ansible.builtin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:18 -y
+
+  - name: install nodejs
+    ansible.builtin.dnf:
+      name: nodejs
+      state: present
+
+  - name: create roboshop user
+    ansible.builtin.user:
+      name: roboshop
+
+  - name: Creates app directory
+    ansible.builtin.file:
+      path: /app
+      state: directory
