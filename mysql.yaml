@@ -1,6 +1,6 @@
 - name: install mysql component
   hosts: mysql
-  becom: yes
+  become: yes
   tasks:
   - name: disable current version of my sql
     ansible.builtin.commend: dnf module disable mysql -y
