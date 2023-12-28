@@ -31,7 +31,7 @@
 
   - name: extract cart application
     ansible.builtin.unarchive:
-      src: /tmp/carte.zip
+      src: /tmp/cart.zip
       dest: /app
       remote_src: yes
 
